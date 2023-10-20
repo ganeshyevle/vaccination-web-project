@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Show All Users</title>
+    <link href="../static/showAllUsers.css" th:href="@{/css/showAllUsers.css}" rel="stylesheet">
+    
+</head>
+<body>
+    <h1>Show All Users</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Contact Number</th>
+            <th>Vaccine Name</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.contactNumber}"></td>
+            <td th:text="${user.vaccineName}"></td>
+        </tr>
+    </table>
+   <center> <a href="/addUser">Add User</a></center>
+</body>
+</html>
